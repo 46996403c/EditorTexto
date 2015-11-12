@@ -133,6 +133,8 @@ public class Controller {
         BufferedReader BrArchivo =  new BufferedReader(archivoEditar);
         //BufferedReader br =  new BufferedReader(new FileReader(abrirArchivo.showOpenDialog(stage))); //ASI NO FUNCIONA!!!
 
+        setTituloStage(archivoAbierto.getName());
+
         String textoDoc;
         while((textoDoc = BrArchivo.readLine())!=null) {
             texto.setText(texto.getText()+"\n"+textoDoc);
@@ -159,5 +161,8 @@ public class Controller {
                 new FileChooser.ExtensionFilter("TXT", "*.txt"),
                 new FileChooser.ExtensionFilter("NFO", "*.nfo")
         );
+    }
+    public void setTituloStage(String tituloNuevo){
+        Main.getStage().setTitle(tituloNuevo + " | Editor de texto");
     }
 }
