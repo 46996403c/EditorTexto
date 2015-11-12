@@ -1,0 +1,8 @@
+.background {
+    -fx-background-color: #1d1d1d;
+}
+.text-area: {
+    outline: none;
+    -fx-background-color: gold;
+    -fx-font-family: "Arial Black";
+}

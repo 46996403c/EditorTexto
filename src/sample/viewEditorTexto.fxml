@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu fx:id="archivoMB" mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem fx:id="salir" mnemonicParsing="false" onAction="#salir" text="Salir" />
+                  <MenuItem fx:id="abrir" mnemonicParsing="false" onAction="#abrirArchivo" text="Abrir archivo" />
+                  <MenuItem fx:id="guardar" mnemonicParsing="false" onAction="#guardarArchivo" text="Guardar archivo" />
+            </items>
+          </Menu>
+          <Menu fx:id="editarMB" mnemonicParsing="false" onShown="#habilitar" text="Editar">
+            <items>
+              <MenuItem fx:id="copiar" mnemonicParsing="false" onAction="#copiar" text="Copiar" />
+                  <MenuItem fx:id="cortar" mnemonicParsing="false" onAction="#cortar" text="Cortar" />
+                  <MenuItem fx:id="pegar" mnemonicParsing="false" onAction="#pegar" text="Pegar" />
+                  <MenuItem fx:id="deshacer" mnemonicParsing="false" onAction="#deshacer" text="Deshacer" />
+                  <MenuItem fx:id="borrar" mnemonicParsing="false" onAction="#borrar" text="Borrar" />
+            </items>
+          </Menu>
+          <Menu fx:id="opcionesMB" mnemonicParsing="false" text="Opciones">
+            <items>
+                  <Menu fx:id="tipoFuente" mnemonicParsing="false" text="Fuentes">
+                     <items>
+                        <CheckMenuItem fx:id="ftarial" mnemonicParsing="false" onAction="#tipoFuente" text="Arial" />
+                        <CheckMenuItem fx:id="fttimesnewroman" mnemonicParsing="false" onAction="#tipoFuente" text="Times New Roman" />
+                        <CheckMenuItem fx:id="ftcomicsans" mnemonicParsing="false" onAction="#tipoFuente" text="Comic Sans" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="colorFuente" mnemonicParsing="false" text="Colores">
+                     <items>
+                        <CheckMenuItem fx:id="fcblue" mnemonicParsing="false" onAction="#colorFuente" text="Azul" />
+                        <CheckMenuItem fx:id="fcred" mnemonicParsing="false" onAction="#colorFuente" text="Rojo" />
+                        <CheckMenuItem fx:id="fcgreen" mnemonicParsing="false" onAction="#colorFuente" text="Verde" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Tamaños">
+                     <items>
+                        <CheckMenuItem fx:id="tamano8" mnemonicParsing="false" onAction="#tamano" text="Tamaño: 8" />
+                        <CheckMenuItem fx:id="tamano13" mnemonicParsing="false" onAction="#tamano" text="Tamaño: 13" />
+                        <CheckMenuItem fx:id="tamano22" mnemonicParsing="false" onAction="#tamano" text="Tamaño: 22" />
+                     </items>
+                  </Menu>
+            </items>
+          </Menu>
+            <Menu fx:id="ayudaMB" mnemonicParsing="false" text="Ayuda">
+               <items>
+                  <MenuItem fx:id="ayuda" mnemonicParsing="false" onAction="#ayuda" text="Ayuda" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="texto" layoutX="63.0" layoutY="24.0" prefHeight="376.0" prefWidth="537.0" promptText="Escribe algo" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+         <contextMenu>
+            <ContextMenu fx:id="menuRaton" onShown="#habilitar">
+              <items>
+                  <MenuItem fx:id="copiarContext" mnemonicParsing="false" onAction="#copiar" text="Copiar" />
+                  <MenuItem fx:id="cortarContext" mnemonicParsing="false" onAction="#cortar" text="Cortar" />
+                  <MenuItem fx:id="pegarContext" mnemonicParsing="false" onAction="#pegar" text="Pegar" />
+                  <MenuItem fx:id="deshacerContext" mnemonicParsing="false" onAction="#deshacer" text="Deshacer" />
+                  <MenuItem fx:id="borrarContext" mnemonicParsing="false" onAction="#borrar" text="Borrar" />
+              </items>
+            </ContextMenu>
+         </contextMenu></TextArea>
+      <ToolBar layoutY="25.0" orientation="VERTICAL" prefHeight="376.0" prefWidth="62.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#copiar" text="Copiar" />
+          <Button mnemonicParsing="false" onAction="#cortar" text="Cortar" />
+          <Button mnemonicParsing="false" onAction="#pegar" text="Pegar" />
+          <Button mnemonicParsing="false" onAction="#borrar" text="Borrar" />
+        </items>
+      </ToolBar>
+   </children>
+</AnchorPane>
