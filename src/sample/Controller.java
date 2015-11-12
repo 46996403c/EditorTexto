@@ -52,15 +52,15 @@ public class Controller {
         tamano8.setSelected(false);
         tamano13.setSelected(false);
         tamano22.setSelected(false);
-        if (actionEventTamano.getSource().equals(tamano8)==true){
+        if (actionEventTamano.getSource().equals(tamano8)){
             tamano8.setSelected(true);
             texto.setFont(Font.font(8));
         }
-        if (actionEventTamano.getSource().equals(tamano13)==true){
+        if (actionEventTamano.getSource().equals(tamano13)){
             tamano13.setSelected(true);
             texto.setFont(Font.font(13));
         }
-        if (actionEventTamano.getSource().equals(tamano22)==true){
+        if (actionEventTamano.getSource().equals(tamano22)){
             tamano22.setSelected(true);
             texto.setFont(Font.font(22));
         }
@@ -69,17 +69,15 @@ public class Controller {
         fcblue.setSelected(false);
         fcred.setSelected(false);
         fcgreen.setSelected(false);
-        //System.out.println("0 "+actionEvent.getSource());
-        //System.out.println("1 "+actionEvent.getSource().equals(fcblue));
-        if (actionEventColor.getSource().equals(fcblue)==true){
+        if (actionEventColor.getSource().equals(fcblue)){
             fcblue.setSelected(true);
             texto.setStyle("-fx-text-fill: blue;");
         }
-        if (actionEventColor.getSource().equals(fcred)==true){
+        if (actionEventColor.getSource().equals(fcred)){
             fcred.setSelected(true);
             texto.setStyle("-fx-text-fill: red;");
         }
-        if (actionEventColor.getSource().equals(fcgreen)==true){
+        if (actionEventColor.getSource().equals(fcgreen)){
             fcgreen.setSelected(true);
             texto.setStyle("-fx-text-fill: green;");
         }
@@ -89,15 +87,15 @@ public class Controller {
         fttimesnewroman.setSelected(false);
         ftcomicsans.setSelected(false);
         Double tamanoTexto = texto.getFont().getSize();
-        if (actionEventFuente.getSource().equals(ftarial)==true){
+        if (actionEventFuente.getSource().equals(ftarial)){
             ftarial.setSelected(true);
             texto.setFont(Font.font("Arial", tamanoTexto));
         }
-        if (actionEventFuente.getSource().equals(fttimesnewroman)==true){
+        if (actionEventFuente.getSource().equals(fttimesnewroman)){
             fttimesnewroman.setSelected(true);
             texto.setFont(Font.font("Times New Roman", tamanoTexto));
         }
-        if (actionEventFuente.getSource().equals(ftcomicsans)==true){
+        if (actionEventFuente.getSource().equals(ftcomicsans)){
             ftcomicsans.setSelected(true);
             texto.setFont(Font.font("Comic Sans", tamanoTexto));
         }
@@ -108,7 +106,6 @@ public class Controller {
         alert.setHeaderText(null);
         alert.setContentText("Editor de texto basico creado por oscarXIII\n\tCierra la ventana para continuar.");
         alert.showAndWait();
-        //http://code.makery.ch/blog/javafx-dialogs-official/
     }
     public void habilitar(){
         if (texto.getSelectedText().equals("")){
@@ -131,7 +128,6 @@ public class Controller {
         File archivoAbierto = abrirArchivo.showOpenDialog(stage);
         FileReader archivoEditar = new FileReader(archivoAbierto);
         BufferedReader BrArchivo =  new BufferedReader(archivoEditar);
-        //BufferedReader br =  new BufferedReader(new FileReader(abrirArchivo.showOpenDialog(stage))); //ASI NO FUNCIONA!!!
 
         setTituloStage(archivoAbierto.getName());
 
@@ -148,7 +144,6 @@ public class Controller {
 
         File archivoGuardado = guardarArchivo.showSaveDialog(stage);
         FileWriter archivoEditado = new FileWriter(archivoGuardado);
-        //PrintWriter PwArchivo = new PrintWriter(archivoEditado);
         BufferedWriter BwArchivo = new BufferedWriter(archivoEditado);
         String docTexto = texto.getText();
         BwArchivo.write(docTexto);
