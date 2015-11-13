@@ -8,7 +8,6 @@ import javafx.scene.text.Font;
 import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.*;
 
 public class Controller {
